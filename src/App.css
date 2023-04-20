@@ -25,6 +25,7 @@ html {
   grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
   gap: 1.8rem;
   padding: 5px 10px 10px 10px;
+  padding-bottom: 20px;
 }
 
 /* start nav */
@@ -153,23 +154,71 @@ header img {
   height: 50px;
 }
 
+/* sidebar */
+
+#sidebar {
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: hsl(240, 100%, 5%);
+  color: white;
+}
+
+#sidebar h1 {
+  color: hsl(35, 77%, 62%);
+}
+
+#sidebar p {
+  color: lightgray;
+}
+
+#sidebar span {
+  display: block;
+  width: 90%;
+  height: 0.1px;
+  background-color: lightgray;
+}
+
+.newsArticle {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.newsArticle h1 {
+  margin: 0;
+  color: lightgray;
+  font-size: 35px;
+}
+
+#imageContainer {
+  width: 50%;
+}
+.newsArticle img {
+  width: 100%;
+}
+
+#TextContainer {
+  width: 100%;
+  /* padding: 0px, 10px, 0px, 10px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
 #content3 {
-  background-color: lightsalmon;
   grid-area: content3;
 }
 #content4 {
-  background-color: yellow;
   grid-area: content4;
 }
 #content5 {
-  background-color: purple;
   grid-area: content5;
 }
 
 @media only screen and (max-width: 550px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 350px 120px 170px 450px 175px 175px 175px;
+    grid-template-rows: 80px 350px 120px 170px 450px 158px 158px 158px;
     /* grid-template-rows: auto auto auto auto auto auto auto auto; */
     height: 100%;
 
