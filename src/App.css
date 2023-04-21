@@ -291,11 +291,10 @@ header img {
   #sidebar h1 {
     margin: 0;
     color: hsl(35, 77%, 62%);
-    /* background-color: blue; */
   }
 
   #sidebar h4 {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   #sidebar p {
@@ -316,21 +315,32 @@ header img {
 
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.15fr 0.4fr 0.3fr 0.4fr;
+    grid-template-rows: 0.15fr 0.4fr 0.3fr 0.25fr;
     margin: auto;
     grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
+  }
+
+  #TextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #TextContainer h4 {
+    font-size: 1.5vw;
+    margin: 0;
+  }
+
+  #TextContainer p {
+    font-size: 1.2vw;
+    margin: 0;
   }
 
   #overlay {
     display: none;
   }
 
-  #content1 {
-    background-color: green;
-  }
-
   #content1 h1 {
-    background-color: blue;
     width: 100%;
     font-size: 43px;
     font-weight: 900;
@@ -418,10 +428,11 @@ header img {
   }
 
   .container {
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 0.4fr 0.25fr 0.25fr;
+    grid-template-rows: 0.15fr 0.4fr 0.25fr 0.25fr;
     margin: auto;
     grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
   }
@@ -454,5 +465,32 @@ header img {
   #content2 p {
     width: 90%;
     margin: 0;
+  }
+
+  #TextContainer h4,
+  p {
+    margin: 0;
+  }
+}
+
+/* desktop view */
+@media only screen and (min-width: 2560px) {
+  .container {
+    padding-top: 100px;
+    padding-right: 500px;
+    padding-left: 500px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.3fr 0.2fr 0.2fr;
+
+    grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
+  }
+
+  .article h4 {
+    font-size: 1vw;
+  }
+
+  .article p {
+    font-size: 1vw;
   }
 }
