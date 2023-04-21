@@ -20,9 +20,10 @@ html {
   overflow: hidden;
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
-  grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 350px 120px 170px 450px 158px 158px 158px;
+  height: 100%;
+  grid-template-areas: "nav" "header" "content1" "content2" "sidebar" "content3" "content4" "content5";
   gap: 1.8rem;
   padding: 5px 10px 10px 10px;
   padding-bottom: 20px;
@@ -117,7 +118,7 @@ header img {
 }
 
 #sidebar {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   grid-area: sidebar;
 }
 
@@ -131,18 +132,24 @@ header img {
 #content1 h1 {
   font-weight: 800;
   height: 100%;
-  /* background-color: blue; */
-  width: 250px;
+
+  width: 80%;
   margin: 0;
   font-size: 35px;
 }
+
 #content2 {
   /* background-color: lightpink; */
   grid-area: content2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #content2 p {
-  font-weight: 700;
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 15px;
   color: grey;
 }
 
@@ -153,25 +160,36 @@ header img {
   color: white;
   width: 35%;
   height: 50px;
+  letter-spacing: 0.2rem;
+  padding: 10px;
 }
 
 /* sidebar */
 
 #sidebar {
-  padding: 0px 20px 0px 20px;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
 
+  flex-direction: column;
   background-color: hsl(240, 100%, 5%);
   color: white;
+  overflow: hidden;
 }
 
 #sidebar h1 {
+  margin: 0;
   color: hsl(35, 77%, 62%);
+  /* background-color: blue; */
+}
+
+#sidebar h4 {
+  font-size: 20px;
 }
 
 #sidebar p {
   color: lightgray;
+  font-size: 15px;
+  margin: 0;
 }
 
 #sidebar span {
@@ -179,6 +197,14 @@ header img {
   width: 90%;
   height: 0.1px;
   background-color: lightgray;
+}
+
+#articleList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: green; */
+  height: 100%;
 }
 
 .newsArticle {
@@ -193,11 +219,18 @@ header img {
   font-size: 35px;
 }
 
+.newsArticle p {
+  margin: 0;
+  font-size: 15px;
+}
+
 #imageContainer {
   width: 50%;
 }
 .newsArticle img {
   width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 #TextContainer {
@@ -216,13 +249,210 @@ header img {
   grid-area: content5;
 }
 
-@media only screen and (max-width: 550px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 350px 120px 170px 450px 158px 158px 158px;
-    /* grid-template-rows: auto auto auto auto auto auto auto auto; */
-    height: 100%;
+/* tablet view */
+@media only screen and (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
 
-    grid-template-areas: "nav" "header" "content1" "content2" "sidebar" "content3" "content4" "content5";
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #menu {
+    background-color: hsl(36, 100%, 99%);
+    transform: none;
+    height: 100%;
+    position: unset;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: unset;
+    transform-origin: unset;
+    transform: unset;
+    transition: unset;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #innerMenu {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50px;
+    width: 60%;
+    display: flex;
+    margin-right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #sidebar h1 {
+    margin: 0;
+    color: hsl(35, 77%, 62%);
+    /* background-color: blue; */
+  }
+
+  #sidebar h4 {
+    font-size: 2vw;
+  }
+
+  #sidebar p {
+    font-size: 1vw;
+  }
+
+  #innerMenu li {
+    margin: auto;
+    font-size: 15px;
+  }
+
+  #lastItem {
+    margin-right: 0px !important;
+  }
+
+  .container {
+    padding: 50px, 20px, 50px, 20px;
+
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.15fr 0.4fr 0.3fr 0.4fr;
+    margin: auto;
+    grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
+  }
+
+  #overlay {
+    display: none;
+  }
+
+  #content1 {
+    background-color: green;
+  }
+
+  #content1 h1 {
+    background-color: blue;
+    width: 100%;
+    font-size: 43px;
+    font-weight: 900;
+  }
+
+  #content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #content2 button {
+    width: 50%;
+  }
+
+  #content2 p {
+    width: 90%;
+    margin: 0;
+  }
+
+  #articleList {
+    margin-bottom: 10px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .article h4 {
+    font-size: 1.5vw;
+  }
+
+  .article p {
+    font-size: 1.5vw;
+  }
+
+  .article {
+    word-wrap: break-word;
+  }
+}
+
+/* desktop view */
+@media only screen and (min-width: 1024px) {
+  .menuToggle {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #menu {
+    background-color: hsl(36, 100%, 99%);
+    transform: none;
+    height: 100%;
+    position: unset;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: unset;
+    transform-origin: unset;
+    transform: unset;
+    transition: unset;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #innerMenu {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50px;
+    width: 50%;
+    display: flex;
+    margin-right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #innerMenu li {
+    margin: auto;
+    font-size: 15px;
+  }
+
+  #lastItem {
+    margin-right: 0px !important;
+  }
+
+  .container {
+    padding: 50px;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 0.4fr 0.25fr 0.25fr;
+    margin: auto;
+    grid-template-areas: "nav nav nav" "header header sidebar" "content1 content2 sidebar" "content3 content4 content5";
+  }
+
+  #overlay {
+    display: none;
+  }
+
+  #content1 {
+    /* background-color: green; */
+  }
+
+  #content1 h1 {
+    /* background-color: blue; */
+    width: 60%;
+    font-size: 43px;
+    font-weight: 900;
+  }
+
+  #content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #content2 button {
+    width: 50%;
+  }
+
+  #content2 p {
+    width: 90%;
+    margin: 0;
   }
 }

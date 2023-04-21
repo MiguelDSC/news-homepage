@@ -47,7 +47,7 @@ function Navbar() {
           <li>New</li>
           <li>Popular</li>
           <li>Trending</li>
-          <li>Categories</li>
+          <li id="lastItem">Categories</li>
         </div>
       </ul>
     </nav>
